@@ -1,29 +1,30 @@
-import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.*;
 
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+public class TelaSobre extends JFrame implements ActionListener {
 
-public class TelaSobre extends JFrame implements ActionListener{
+	JLabel imagem;
+	ImageIcon icon;
+	JButton buttonFechar;
 	JPanel panel;
 	
 	public TelaSobre() {
 		setTitle("Sobre");
-		setSize(530, 570);
+		setSize(650, 550);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		
 		panel = new JPanel(new GridLayout(1,1));
 		
-		JLabel label = new JLabel ("Campo Minado");
-		label.setFont(label.getFont().deriveFont(32.0f));
-		panel.add(label);
+		icon = new ImageIcon("img/sobre.png");
+		panel.add(imagem = new JLabel(icon));
 		
+		buttonFechar = new JButton("Fechar");
+		buttonFechar.addActionListener(this);
 		add(panel, BorderLayout.CENTER);
+		add(buttonFechar, BorderLayout.SOUTH);	
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		this.dispose();
