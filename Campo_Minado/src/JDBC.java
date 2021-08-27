@@ -6,7 +6,7 @@ public class JDBC {
 	
 	private String url = "jdbc:mysql://localhost/campo_minado?useSSL=false";
 	private String user = "user";
-	private String password = "user";
+	private String password = "root";
 	Connection connection = null;
 
 	public Connection getConnection() {
